@@ -1,2 +1,5 @@
 /node_modules
 .env
+database.mwb
+database.mwb.bak
+package-lock.json
