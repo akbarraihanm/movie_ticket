@@ -19,11 +19,9 @@ app.get('/', (req, res) => {
     });
 });
 
-require('./lib/routes/genre.route')(app);
-require('./lib/routes/status.route')(app);
 require('./lib/routes/price.route')(app);
-require('./lib/routes/movie.route')(app);
 require('./lib/routes/transaction.route')(app);
+require('./lib/routes/time.route')(app);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
