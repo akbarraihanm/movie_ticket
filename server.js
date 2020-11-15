@@ -5,6 +5,7 @@ require('dotenv').config({path: __dirname + '/.env'});
 const app = express();
 
 const db = require("./lib/models/init");
+const bodyParser = require('body-parser');
 db.sequelize.sync({alter : true});
 
 var corsOptions = {
@@ -12,6 +13,8 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
 
 app.get('/', (req, res) => {
     res.json({
